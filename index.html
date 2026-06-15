@@ -87,6 +87,7 @@
     opacity:var(--glow-opacity);
     z-index:0;
     pointer-events:none;
+    transform:translateZ(0);
   }
   .glow1{background:var(--primary);top:-200px;left:-150px;}
   .glow2{background:var(--accent);top:40%;right:-200px;opacity:var(--glow2-opacity);}
@@ -100,6 +101,7 @@
   }
   header.scrolled{
     background:var(--header-bg);
+    -webkit-backdrop-filter:blur(20px);
     backdrop-filter:blur(20px);
     border-bottom:1px solid var(--border);
     padding:12px 0;
@@ -110,9 +112,10 @@
     width:42px;height:42px;border-radius:12px;
     background:var(--gradient);
     display:flex;align-items:center;justify-content:center;
-    font-weight:900;font-size:1.3rem;color:#fff;
+    overflow:hidden;
     box-shadow:0 8px 24px rgba(108,43,217,0.5);
   }
+  .logo-icon-img{width:100%;height:100%;object-fit:contain;}
   .nav-links{display:flex;gap:32px;align-items:center;}
   .nav-links a{color:var(--gray);font-size:.95rem;font-weight:500;transition:color .3s;}
   .nav-links a:hover{color:var(--nav-hover);}
@@ -393,6 +396,7 @@
     .testi-grid{grid-template-columns:1fr;}
     .footer-grid{grid-template-columns:1fr 1fr;}
     .platform-banner{padding:40px 24px;}
+    .bg-glow{display:none;}
   }
 </style>
 </head>
@@ -407,7 +411,7 @@
   <div class="container">
     <nav>
       <a href="#" class="logo">
-        <div class="logo-icon">K</div>
+        <div class="logo-icon"><img src="kora_logo.png" alt="Kora" class="logo-icon-img"></div>
         Kora<span style="color:var(--accent)">.</span>
       </a>
       <div class="nav-links" id="navLinks">
@@ -809,7 +813,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="#" class="logo"><div class="logo-icon">K</div>Kora<span style="color:var(--accent)">.</span></a>
+        <a href="#" class="logo"><div class="logo-icon"><img src="kora_logo.png" alt="Kora" class="logo-icon-img"></div>Kora<span style="color:var(--accent)">.</span></a>
         <p>O ERP inteligente que centraliza vendas, finanças e integrações em uma só plataforma online.</p>
         <div class="social">
           <a href="#">📘</a><a href="#">📸</a><a href="#">🐦</a><a href="#">💼</a>
