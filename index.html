@@ -172,15 +172,33 @@
   .mockup-bar span:nth-child(1){background:#FF6B6B;}
   .mockup-bar span:nth-child(2){background:#FFD93D;}
   .mockup-bar span:nth-child(3){background:#6BCB77;}
-  .mockup-body{padding:28px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;}
-  .stat-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:left;}
-  .stat-card .label{color:var(--gray);font-size:.8rem;margin-bottom:6px;}
-  .stat-card .value{font-size:1.8rem;font-weight:800;font-family:'Sora';}
-  .stat-card .trend{font-size:.8rem;color:var(--accent);margin-top:4px;}
-  .chart-card{grid-column:span 3;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;}
-  .chart-bars{display:flex;align-items:flex-end;gap:10px;height:120px;margin-top:14px;}
-  .chart-bars div{flex:1;border-radius:6px 6px 0 0;background:var(--gradient);animation:grow 1.5s ease;}
-  @keyframes grow{from{height:0;}}
+  .mockup-body{padding:28px;}
+  .pie-layout{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:start;}
+  .pie-section{display:flex;flex-direction:column;align-items:center;gap:20px;}
+  .pie-chart{position:relative;width:200px;height:200px;}
+  .pie-donut{
+    width:100%;height:100%;border-radius:50%;
+    background:conic-gradient(#6C2BD9 0% 45%,#00E0C7 45% 70%,#FF6B9D 70% 100%);
+  }
+  .pie-center{
+    position:absolute;inset:0;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;
+  }
+  .pie-center::after{
+    content:'';position:absolute;width:110px;height:110px;border-radius:50%;background:var(--dark-2);z-index:0;
+  }
+  .pie-center .pie-total{font-family:'Sora';font-size:1.4rem;font-weight:800;z-index:1;}
+  .pie-center .pie-sub{font-size:.75rem;color:var(--gray);z-index:1;margin-top:2px;}
+  .pie-legend{display:flex;flex-direction:column;gap:10px;width:100%;max-width:220px;}
+  .pie-legend-item{display:flex;align-items:center;gap:10px;font-size:.88rem;color:var(--gray);}
+  .pie-legend-item .dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+  .pie-legend-item strong{color:var(--light);margin-left:auto;}
+  .pie-metrics{display:flex;flex-direction:column;gap:12px;}
+  .pm-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px;}
+  .pm-label{color:var(--gray);font-size:.78rem;margin-bottom:4px;}
+  .pm-value{font-size:1.3rem;font-weight:800;font-family:'Sora';}
+  .pm-trend{font-size:.78rem;margin-top:3px;}
+  .pm-trend.up{color:var(--accent);}
 
   /* Section */
   section{position:relative;z-index:1;padding:90px 0;}
@@ -364,8 +382,9 @@
     .menu-toggle{display:block;z-index:1100;}
     .module-row{grid-template-columns:1fr;gap:30px;}
     .module-row.reverse .module-visual{order:0;}
-    .mockup-body{grid-template-columns:1fr;}
-    .chart-card{grid-column:span 1;}
+    .pie-layout{grid-template-columns:1fr;}
+    .pie-chart{width:160px;height:160px;}
+    .pie-center::after{width:90px;height:90px;}
     .stats-row{grid-template-columns:repeat(2,1fr);gap:30px 16px;}
     .pricing-grid{grid-template-columns:1fr;}
     .price-card.featured{transform:scale(1);}
@@ -417,35 +436,36 @@
     <!-- Dashboard Mockup -->
     <div class="hero-mockup">
       <div class="mockup-bar"><span></span><span></span><span></span></div>
-      <div class="mockup-body">
-        <div class="stat-card">
-          <div class="label">Faturamento do Dia</div>
-          <div class="value gradient-text">R$ 14.280</div>
-          <div class="trend">↑ 23% vs ontem</div>
-        </div>
-        <div class="stat-card">
-          <div class="label">Pedidos Online</div>
-          <div class="value gradient-text">347</div>
-          <div class="trend">↑ 12% iFood + ML</div>
-        </div>
-        <div class="stat-card">
-          <div class="label">Ticket Médio</div>
-          <div class="value gradient-text">R$ 41,15</div>
-          <div class="trend">↑ 5% no mês</div>
-        </div>
-        <div class="chart-card">
-          <div style="display:flex;justify-content:space-between;align-items:center;">
-            <strong>Vendas por Canal</strong>
-            <span style="color:var(--accent);font-size:.85rem;">Últimos 7 dias</span>
+      <div class="mockup-body pie-layout">
+        <div class="pie-section">
+          <div class="pie-chart">
+            <div class="pie-donut"></div>
+            <div class="pie-center">
+              <span class="pie-total gradient-text">R$ 98,7K</span>
+              <span class="pie-sub">Vendas totais</span>
+            </div>
           </div>
-          <div class="chart-bars">
-            <div style="height:60%"></div>
-            <div style="height:85%"></div>
-            <div style="height:45%"></div>
-            <div style="height:95%"></div>
-            <div style="height:70%"></div>
-            <div style="height:100%"></div>
-            <div style="height:80%"></div>
+          <div class="pie-legend">
+            <div class="pie-legend-item"><span class="dot" style="background:#6C2BD9"></span>Loja Física <strong>45%</strong></div>
+            <div class="pie-legend-item"><span class="dot" style="background:#00E0C7"></span>iFood + Apps <strong>25%</strong></div>
+            <div class="pie-legend-item"><span class="dot" style="background:#FF6B9D"></span>Marketplaces <strong>30%</strong></div>
+          </div>
+        </div>
+        <div class="pie-metrics">
+          <div class="pm-card">
+            <div class="pm-label">Faturamento do Dia</div>
+            <div class="pm-value gradient-text">R$ 14.280</div>
+            <div class="pm-trend up">↑ 23% vs ontem</div>
+          </div>
+          <div class="pm-card">
+            <div class="pm-label">Pedidos Online</div>
+            <div class="pm-value gradient-text">347</div>
+            <div class="pm-trend up">↑ 12% iFood + ML</div>
+          </div>
+          <div class="pm-card">
+            <div class="pm-label">Ticket Médio</div>
+            <div class="pm-value gradient-text">R$ 41,15</div>
+            <div class="pm-trend up">↑ 5% no mês</div>
           </div>
         </div>
       </div>
