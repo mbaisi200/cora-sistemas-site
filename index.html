@@ -120,6 +120,7 @@
     display:inline-block;padding:13px 28px;border-radius:50px;
     font-weight:600;font-size:.95rem;cursor:pointer;border:none;
     transition:all .3s ease;font-family:'Inter';
+    will-change:transform;
   }
   .btn-primary{
     background:var(--gradient);color:#fff;
@@ -282,7 +283,7 @@
   .int-card:hover{transform:translateY(-6px) scale(1.03);background:rgba(255,255,255,0.07);border-color:var(--accent);}
   .int-logo{
     width:64px;height:64px;border-radius:16px;display:flex;align-items:center;justify-content:center;
-    font-size:1.6rem;font-weight:800;color:#fff;
+    line-height:0;
   }
   .int-card span{font-weight:600;font-size:.95rem;}
 
@@ -628,12 +629,12 @@
       <p>Centralize todos os seus pedidos em um só lugar. Sem digitação manual, sem erros, sem dor de cabeça.</p>
     </div>
     <div class="int-grid">
-      <div class="int-card reveal"><div class="int-logo" style="background:#EA1D2C">iF</div><span>iFood</span></div>
-      <div class="int-card reveal"><div class="int-logo" style="background:#06C167">UE</div><span>UberEats</span></div>
-      <div class="int-card reveal"><div class="int-logo" style="background:#FFC700;color:#000">99</div><span>99Food</span></div>
-      <div class="int-card reveal"><div class="int-logo" style="background:#FFE600;color:#000">ML</div><span>Mercado Livre</span></div>
-      <div class="int-card reveal"><div class="int-logo" style="background:#EE4D2D">SH</div><span>Shopee</span></div>
-      <div class="int-card reveal"><div class="int-logo" style="background:#25D366">WA</div><span>WhatsApp</span></div>
+      <div class="int-card reveal"><div class="int-logo" style="background:#EA1D2C"><svg viewBox="0 0 24 24" width="32" height="32"><path d="M8.428 1.67c-4.65 0-7.184 4.149-7.184 6.998 0 2.294 2.2 3.299 4.25 3.299l-.006-.006c4.244 0 7.184-3.854 7.184-6.998 0-2.29-2.175-3.293-4.244-3.293zm11.328 0c-4.65 0-7.184 4.149-7.184 6.998 0 2.294 2.2 3.299 4.25 3.299l-.006-.006C21.061 11.96 24 8.107 24 4.963c0-2.29-2.18-3.293-4.244-3.293zM14.172 14.52l2.435 1.834c-2.17 2.07-6.124 3.525-9.353 3.17A8.913 8.913 0 01.23 14.541H0a9.598 9.598 0 008.828 7.758c3.814.24 7.323-.905 9.947-3.13l-.004.007 1.08 2.988 1.555-7.623-7.234-.02Z" fill="#fff"/></svg></div><span>iFood</span></div>
+      <div class="int-card reveal"><div class="int-logo" style="background:#06C167"><svg viewBox="0 0 24 24" width="32" height="32"><path d="M0 2.8645v4.9972c0 1.8834 1.3315 3.1297 3.0835 3.1297a2.9652 2.9652 0 0 0 2.1502-.876v.7425H6.445V2.8645H5.223v4.9339c0 1.2642-.8696 2.1198-1.9954 2.122-1.1386-.0023-1.997-.834-1.997-2.122V2.8645zm7.3625 0v7.9934h1.163v-.7318a2.9915 2.9915 0 0 0 2.1177.876c1.714.048 3.1295-1.3283 3.1295-3.0429s-1.4155-3.091-3.1295-3.0429a2.9674 2.9674 0 0 0-2.107.876V2.8645zm9.8857 2.0561c-1.6752-.0074-3.0369 1.3492-3.0356 3.0245 0 1.7366 1.3732 3.0373 3.1537 3.0373a3.123 3.123 0 0 0 2.5578-1.2438l-.8495-.6177a2.0498 2.0498 0 0 1-1.7083.8585c-.9763.0126-1.8147-.6915-1.971-1.6553h4.818v-.379c0-1.734-1.254-3.0238-2.9638-3.0245zm6.1632.0667a1.5943 1.5943 0 0 0-1.376.7657v-.7186h-1.163v5.8235h1.1741V7.5465c0-.9023.5581-1.4847 1.3268-1.4847h.4949V4.9886c-.1576.0013-.3186-.0009-.4568-.0013zm-6.2034.944a1.844 1.844 0 0 1 1.8337 1.486H15.424a1.844 1.844 0 0 1 1.784-1.486zm-6.6589.0056c1.1223-.0084 2.0365.8992 2.0364 2.0215-.0026 1.1203-.914 2.0258-2.0343 2.021a2.0151 2.0151 0 0 1-1.4159-.5987A2.0152 2.0152 0 0 1 8.55 7.9592a2.0152 2.0152 0 0 1 .5838-1.422 2.0152 2.0152 0 0 1 1.4153-.6003zM0 12.9864v7.9716h5.7222v-1.3666H1.5458v-1.971h4.0647v-1.314H1.5458v-1.9556h4.1764v-1.3644zm14.5608.4097v1.6861h-1.1519v1.338h1.1545v3.143c0 .7927.5712 1.4209 1.6005 1.4209h1.6425L17.8 19.646h-1.1412c-.3482 0-.5714-.1509-.5714-.464v-2.7683H17.8v-1.3316h-1.7062v-1.686zm-5.2974 1.5275c-1.7348-.0103-3.141 1.4035-3.1214 3.1382.0196 1.7346 1.4575 3.1163 3.1915 3.0668a2.9915 2.9915 0 0 0 1.912-.6655v.532h1.5175v-5.9129h-1.509v.5257a3.0047 3.0047 0 0 0-1.9205-.6835c-.0244-.0007-.0492-.0006-.0701-.0008zm11.771.0077c-1.5855 0-2.7002.6437-2.7002 1.8854 0 .8607.6132 1.4213 1.936 1.695l1.4478.3286c.5694.1095.7224.2585.7224.4906 0 .3701-.438.6022-1.1279.6022-.876 0-1.3774-.1907-1.5723-.8477h-1.533c.219 1.2307 1.1563 2.05 3.0484 2.05h.0022c1.752 0 2.7422-.819 2.7422-1.9534 0-.8059-.5847-1.4084-1.8089-1.6668l-1.2943-.2605c-.7511-.1358-.988-.2738-.988-.5454 0-.357.3616-.5757 1.0295-.5757.7227 0 1.2527.1925 1.406.8473h1.5175c-.0854-1.2286-.9899-2.0497-2.8273-2.0497zM9.467 16.1815c1.0092.0096 1.8188.8369 1.8067 1.8461.0014 1.0046-.8198 1.816-1.8243 1.8025-1.0075-.0048-1.8203-.8256-1.8155-1.833.0048-1.0076.8255-1.8204 1.833-1.8156z" fill="#fff"/></svg></div><span>UberEats</span></div>
+      <div class="int-card reveal"><div class="int-logo" style="background:#FFC700;color:#000"><svg viewBox="0 0 24 24" width="32" height="32"><text x="12" y="17" text-anchor="middle" font-size="13" font-weight="900" fill="#000" font-family="sans-serif">99</text></svg></div><span>99Food</span></div>
+      <div class="int-card reveal"><div class="int-logo" style="background:#FFE600;color:#000"><svg viewBox="0 0 24 24" width="32" height="32"><path d="M4 17c2-1.5 4-4 5-6s1.5-3.5 3-4.5" stroke="#333" stroke-width="1.8" stroke-linecap="round" fill="none"/><path d="M20 7c-2 1.5-4 4-5 6s-1.5 3.5-3 4.5" stroke="#333" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg></div><span>Mercado Livre</span></div>
+      <div class="int-card reveal"><div class="int-logo" style="background:#EE4D2D"><svg viewBox="0 0 24 24" width="32" height="32"><path d="M15.9414 17.9633c.229-1.879-.981-3.077-4.1758-4.0969-1.548-.528-2.277-1.22-2.26-2.1719.065-1.056 1.048-1.825 2.352-1.85a5.2898 5.2898 0 0 1 2.8838.89c.116.072.197.06.263-.039.09-.145.315-.494.39-.62.051-.081.061-.187-.068-.281-.185-.1369-.704-.4149-.983-.5319a6.4697 6.4697 0 0 0-2.5118-.514c-1.909.008-3.4129 1.215-3.5389 2.826-.082 1.1629.494 2.1078 1.73 2.8278.262.152 1.6799.716 2.2438.892 1.774.552 2.695 1.5419 2.478 2.6969-.197 1.047-1.299 1.7239-2.818 1.7439-1.2039-.046-2.2878-.537-3.1278-1.19l-.141-.11c-.104-.08-.218-.075-.287.03-.05.077-.376.547-.458.67-.077.108-.035.168.045.234.35.293.817.613 1.134.775a6.7097 6.7097 0 0 0 2.8289.727 4.9048 4.9048 0 0 0 2.0759-.354c1.095-.465 1.8029-1.394 1.9449-2.554zM11.9986 1.4009c-2.068 0-3.7539 1.95-3.8329 4.3899h7.6657c-.08-2.44-1.765-4.3899-3.8328-4.3899zm7.8516 22.5981-.08.001-15.7843-.002c-1.074-.04-1.863-.91-1.971-1.991l-.01-.195L1.298 6.2858a.459.459 0 0 1 .45-.494h4.9748C6.8448 2.568 9.1607 0 11.9996 0c2.8388 0 5.1537 2.5689 5.2757 5.7898h4.9678a.459.459 0 0 1 .458.483l-.773 15.5883-.007.131c-.094 1.094-.979 1.9769-2.0709 2.0059z" fill="#fff"/></svg></div><span>Shopee</span></div>
+      <div class="int-card reveal"><div class="int-logo" style="background:#25D366"><svg viewBox="0 0 24 24" width="32" height="32"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" fill="#fff"/></svg></div><span>WhatsApp</span></div>
     </div>
   </div>
 </section>
@@ -645,10 +646,10 @@
       <h2>Funciona em qualquer lugar, em qualquer dispositivo</h2>
       <p>100% online e na nuvem. Acesse pelo computador, tablet ou celular. Compatível com Windows, macOS, Linux, Android e iOS.</p>
       <div class="platform-icons">
-        <div><span class="pi-icon"><svg viewBox="0 0 24 24" width="48" height="48" fill="currentColor"><path d="M0 0h11.4v11.4H0V0zm12.6 0H24v11.4H12.6V0zM0 12.6h11.4V24H0V12.6zm12.6 0H24V24H12.6V12.6z"/></svg></span> Windows</div>
+        <div><span class="pi-icon"><svg viewBox="0 0 24 24" width="48" height="48" fill="#00A4EF"><path d="M0 0h11.4v11.4H0V0zm12.6 0H24v11.4H12.6V0zM0 12.6h11.4V24H0V12.6zm12.6 0H24V24H12.6V12.6z"/></svg></span> Windows</div>
         <div><span class="pi-icon"><svg viewBox="0 0 24 24" width="48" height="48" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.3.74 3.09.8 1.2-.24 2.35-.74 3.6-.66 1.52.12 2.66.76 3.42 1.92-3.13 1.87-2.63 5.98.53 7.14-.63 1.63-1.55 3.25-2.64 3.77zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg></span> macOS</div>
         <div><span class="pi-icon">🐧</span> Linux</div>
-        <div><span class="pi-icon"><svg viewBox="0 0 24 24" width="48" height="48" fill="currentColor"><path d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10zm-2.5-9.5C2.67 8.5 2 9.17 2 10v5c0 .83.67 1.5 1.5 1.5S5 15.83 5 15v-5c0-.83-.67-1.5-1.5-1.5zm17 0c-.83 0-1.5.67-1.5 1.5v5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-5c0-.83-.67-1.5-1.5-1.5zM13 2.24l1.88-1.88c.2-.2.2-.51 0-.71-.2-.2-.51-.2-.71 0L12 1.76 9.82-.41c-.2-.2-.51-.2-.71 0-.2.2-.2.51 0 .71L11 2.24V4h2V2.24zM15 5H9c-1.1 0-2 .9-2 2h10c0-1.1-.9-2-2-2z"/></svg></span> Android</div>
+        <div><span class="pi-icon"><svg viewBox="0 0 24 24" width="48" height="48" fill="#3DDC84"><path d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10zm-2.5-9.5C2.67 8.5 2 9.17 2 10v5c0 .83.67 1.5 1.5 1.5S5 15.83 5 15v-5c0-.83-.67-1.5-1.5-1.5zm17 0c-.83 0-1.5.67-1.5 1.5v5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-5c0-.83-.67-1.5-1.5-1.5zM13 2.24l1.88-1.88c.2-.2.2-.51 0-.71-.2-.2-.51-.2-.71 0L12 1.76 9.82-.41c-.2-.2-.51-.2-.71 0-.2.2-.2.51 0 .71L11 2.24V4h2V2.24zM15 5H9c-1.1 0-2 .9-2 2h10c0-1.1-.9-2-2-2z"/></svg></span> Android</div>
         <div><span class="pi-icon"><svg viewBox="0 0 24 24" width="48" height="48" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.3.74 3.09.8 1.2-.24 2.35-.74 3.6-.66 1.52.12 2.66.76 3.42 1.92-3.13 1.87-2.63 5.98.53 7.14-.63 1.63-1.55 3.25-2.64 3.77zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg></span> iOS</div>
         <div><span class="pi-icon">🌐</span> Navegador</div>
       </div>
@@ -905,6 +906,28 @@
       localStorage.setItem('theme', 'light');
       themeToggle.textContent = '☀️';
     }
+  });
+
+  // Magnetic + Parallax buttons
+  document.querySelectorAll('.btn').forEach(btn => {
+    btn.addEventListener('mousemove', e => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      const dist = Math.sqrt(x * x + y * y);
+      const maxDist = 100;
+      const strength = Math.min(dist / maxDist, 1);
+      const mx = x * 0.3 * strength;
+      const my = y * 0.3 * strength;
+      const rx = (y / rect.height) * 8;
+      const ry = -(x / rect.width) * 8;
+      btn.style.transform = `perspective(800px) translate(${mx}px, ${my}px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+      btn.style.transition = 'transform .1s ease-out';
+    });
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = '';
+      btn.style.transition = 'transform .5s cubic-bezier(.34,1.56,.64,1)';
+    });
   });
 </script>
 </body>
